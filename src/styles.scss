@@ -1,4 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: samim;
+    src: url(./assets/fonts/irsans.ttf);
+  }
+
+h1,h2,h3,h4,h5,h6,p,li,a,button{
+     font-family: samim !important;
+     }

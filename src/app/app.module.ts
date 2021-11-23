@@ -4,9 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { DefaultComponent } from './dashboard/default/default.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidenavComponent } from './layout/sidenav/sidenav.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DefaultComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <p id="#time">1400/08/05</p>
+        <div class="row mr-2 ml-auto">
+            <ul>
+                <li>
+                    <button id="user-icon" mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+                        <img src="../../assets/images/p.jpg" alt="user" class="user-image p-2" />
+                        یوسف غیبی
+                        <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" class="profile">
+                        <button mat-menu-item>
+                            <mat-icon>exit_to_app</mat-icon>
+                            خروج کاربر
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
