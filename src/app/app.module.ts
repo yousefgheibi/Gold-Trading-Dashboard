@@ -8,7 +8,7 @@ import { DefaultComponent } from './dashboard/default/default.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
-import { DynamicClockComponent } from './dynamic-clock/dynamic-clock.component';
+import { DynamicClockComponent } from './shared/dynamic-clock/dynamic-clock.component';
 @NgModule({
   declarations: [
     AppComponent,
