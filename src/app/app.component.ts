@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Gold-Trading-Dashboard1';
+  title = 'سیستم معاملاتی طلا';
 }

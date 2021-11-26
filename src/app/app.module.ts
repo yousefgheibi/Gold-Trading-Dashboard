@@ -4,11 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
-import { DefaultComponent } from './dashboard/default/default.component';
+import { DefaultComponent } from './themes/default/default.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { DynamicClockComponent } from './shared/dynamic-clock/dynamic-clock.component';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { DynamicClockComponent } from './shared/dynamic-clock/dynamic-clock.comp
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
-    DynamicClockComponent
+    DynamicClockComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
