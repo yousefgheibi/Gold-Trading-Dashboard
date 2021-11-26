@@ -9,14 +9,15 @@ import { TiketComponent } from './pages/tiket/tiket.component';
 import { DefaultComponent } from './themes/default/default.component';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
+  {path:'login',component:LoginComponent},
   {path :'' , component: DefaultComponent ,
     children:[
   {path:'',component:HomeComponent },
   {path:'products',component:ProductsComponent},
   {path:'factors',component:FactorsComponent},
   {path:'cart',component:CartComponent},
-  {path:'ticket',component:TiketComponent}
+  {path:'ticket',component:TiketComponent},
+  {path:'**' , redirectTo : ''}
       ]}
 ];
 

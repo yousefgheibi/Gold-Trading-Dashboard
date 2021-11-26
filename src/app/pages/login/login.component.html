@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form" (ngSubmit)="loginForm()" [formGroup]="formGroupLogin">
+                <img src="../../../assets/images/Logo.png" class="w-100">
+                <p>
+                    <mat-form-field appearance="standard" class="w-100">
+                        <mat-label>آدرس ایمیل</mat-label>
+                        <input name="email" formControlName="email" type="email" matInput required
+                            placeholder="yousef@gmail.com">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="standard" class="w-100">
+                        <mat-label>رمز عبور</mat-label>
+                        <input name="password" minlength="8" formControlName="password" type="password" required
+                            matInput placeholder="**********">
+                    </mat-form-field>
+                </p>
+
+                <div class="container-login100-form-btn pt-5">
+                    <button mat-raised-button type="submit" class="login-form-btn w-100"
+                        [disabled]="formGroupLogin.invalid">ورود</button>
+                </div>
+                <div class="pt-3"><a href="mailto:info@yarasystem.com" target="_blank">فراموشی رمز عبور</a></div>
+            </form>
+            <div class="login100-more" style="background-image: url('../../../assets/images/login-background.jpg');">
+            </div>
+        </div>
+    </div>
+</div>
