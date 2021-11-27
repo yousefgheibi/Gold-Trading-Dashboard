@@ -14,6 +14,9 @@ import { DynamicClockComponent } from './shared/dynamic-clock/dynamic-clock.comp
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TiketComponent } from './pages/tiket/tiket.component';
+import { NotificationService } from './services/notification.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import { TiketComponent } from './pages/tiket/tiket.component';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [NotificationService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

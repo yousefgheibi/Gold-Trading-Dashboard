@@ -3,10 +3,28 @@
 // @import "src/assets/styles/_color.scss";
 
 @font-face {
-    font-family: samim;
-    src: url(./assets/fonts/irsans.ttf);
+   font-family: samim;
+   src: url(./assets/fonts/irsans.ttf);
   }
 
-h1,h2,h3,h4,h5,h6,p,li,a,button,mat-label,input,mat-hint{
-     font-family: samim !important;
-     }
+h1,h2,h3,h4,h5,h6,p,li,a,button,mat-label,input,mat-hint,span{
+   font-family: samim !important;
+  }
+
+.mat-simple-snackbar{
+   font-size: 12px;
+   font-weight: 400;
+}
+.mat-snack-bar-container {
+   max-width: 275px !important;
+   min-width: 275px !important;
+}
+snack-bar-container.success {
+   background-color: #06a379;
+   color: #fff;
+}
+
+snack-bar-container.warn {
+   background-color: #c10639;
+   color: #fff;
+}
