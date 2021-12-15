@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { MaterialModule } from './shared/material.module';
 import { DefaultComponent } from './themes/default/default.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -16,6 +15,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { TiketComponent } from './pages/tiket/tiket.component';
 import { NotificationService } from './services/notification.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ProductApiService } from './services/product-api.service';
+import { ProductsComponent } from './pages/products/products.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     DynamicClockComponent,
     LoginComponent,
     HomeComponent,
-    TiketComponent
+    TiketComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,10 +39,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    
 
   ],
-  providers: [NotificationService], 
+  providers: [NotificationService,ProductApiService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
