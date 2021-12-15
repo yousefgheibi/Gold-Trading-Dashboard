@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductModel } from 'src/app/models/product.model';
+import { ProductApiService } from 'src/app/services/product-api.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  IsWait : Boolean = false;
+  public productData : ProductModel[] = [];
+  
+  constructor(private _productApi : ProductApiService) { }
 
   ngOnInit(): void {
+    this.getProduct();
+    
+  
   }
+
+  getProduct(){
+    this._productApi.getProduct().subscribe(
+      res=>{
+        this.productData = res;
+        console.log(this.productData);
+        this.IsWait = true;
+    })
+  }
+
 
 }
