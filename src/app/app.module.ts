@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { DefaultComponent } from './themes/default/default.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -41,6 +41,7 @@ import { ProductsComponent } from './pages/products/products.component';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    FormsModule
     
 
   ],

@@ -6,7 +6,7 @@
 
       <div class="col-md-10">
           <mat-form-field>
-            <input matInput placeholder="جستجو">
+            <input matInput placeholder="جستجو" name="searchKey" [(ngModel)]="searchKey" (ngModelChange)="doSearch($event)">
             <button mat-button matSuffix mat-icon-button aria-label="Clear">
               <mat-icon>close</mat-icon>
             </button>
