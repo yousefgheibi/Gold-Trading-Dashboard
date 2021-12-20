@@ -9,3 +9,42 @@
 *:not(mat-icon) {
    font-family: samim !important;
 }
+
+snack-bar-container.success {
+   background-color: #5cb85c;
+   color: #fff;
+}
+
+snack-bar-container.warn {
+   background-color: #f99157;
+   color: #fff;
+}
+
+pagination-controls {
+   padding: 50px 0;
+}
+
+.ng-star-inserted {
+   font-size: 1rem;
+}
+.ng-star-inserted a {
+   text-decoration: none;
+}
+
+.ngx-pagination {
+   float: left !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+   background: #3f579c !important;
+   border: transparent !important;
+   border-radius: 2px !important;
+   font-size: 1rem;
+}
+
+.ngx-pagination .current:hover {
+   background: #3f579c !important;
+   border-radius: 2px !important;
+   border: transparent !important;
+}

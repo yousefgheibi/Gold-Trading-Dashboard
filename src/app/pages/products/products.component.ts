@@ -9,9 +9,10 @@ import { ProductApiService } from 'src/app/services/product-api.service';
 })
 export class ProductsComponent implements OnInit {
 
+  p : any;
   IsWait : Boolean = false;
   public productData : ProductModel[] = [];
-  
+  searchKey : string | undefined;
   constructor(private _productApi : ProductApiService) { }
 
   ngOnInit(): void {
@@ -28,6 +29,24 @@ export class ProductsComponent implements OnInit {
         this.IsWait = true;
     })
   }
+
+
+  doSearch(searchKey : string) {
+    let result : ProductModel[] = [];
+    if(searchKey.length > 2) {
+      result = this.productData.filter((item) => {
+        // @ts-ignore
+        return !(item.name.trim().indexOf(this.searchKey.trim()) <= -1);
+      });
+    }
+    if(result.length > 0 ){
+      this.productData = result;
+    }
+    else{
+        this.getProduct();
+    }
+  }
+
 
 
 }

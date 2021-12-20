@@ -1,17 +1,19 @@
 <div class="container">
-    <div class="row justify-content">
-      <div class="col-md-2 pb-3">
-        <button mat-raised-button class="btn-create"><mat-icon>add</mat-icon>محصول جدید </button>
-      </div>
+  <div class="row justify-content">
+    <div class="col-md-2 pb-3">
+      <button mat-raised-button class="btn-create">
+        <mat-icon>add</mat-icon>محصول جدید
+      </button>
+    </div>
 
-      <div class="col-md-10">
-          <mat-form-field>
-            <input matInput placeholder="جستجو">
-            <button mat-button matSuffix mat-icon-button aria-label="Clear">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-      </div>
+    <div class="col-md-10">
+      <mat-form-field>
+        <input matInput placeholder="جستجو" name="searchKey" [(ngModel)]="searchKey" (ngModelChange)="doSearch($event)">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
   </div>
 </div>
 <mat-divider></mat-divider>
@@ -19,25 +21,35 @@
 </mat-progress-spinner>
 <div class="container">
   <div class="row mt-2">
-    <div *ngFor="let row of productData" class="col-md-3">
-      <div class="card-sl mb-2">
+    <div *ngFor="let row of productData |  paginate: { itemsPerPage: 8, currentPage: p }" class="col-md-3 m-0 p-0">
+      <div class="card-sl">
 
-        <div class="card-image"><img src="{{row.image}}" class="w-100" alt="{{row.name}}"/></div>
-        <button class="card-action" mat-icon-button color="accent"><mat-icon>delete_outline</mat-icon></button>
-        <button class="card-action" mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
+        <div class="card-image"><img src="{{row.image}}" class="w-100" alt="{{row.name}}" /></div>
+        <button class="card-action" mat-icon-button color="accent">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button class="card-action" mat-icon-button color="accent">
+          <mat-icon>edit</mat-icon>
+        </button>
 
         <div class="card-heading">{{row.name}}</div>
-          <div class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">
-            {{row.comment}}
-          </div>
-          <div class="card-text">
-            <span *ngIf="row.weight">{{row.weight}} <small> گرم</small> , </span>
-            <span>موجودی :{{row.stock}}</span>
-          </div>
-          <button mat-raised-button class="card-button">اضافه کردن به سبد فروش</button>
+        <div class="card-text"
+          style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">
+          {{row.comment}}
+        </div>
+        <div class="card-text">
+          <span *ngIf="row.weight">{{row.weight}} <small> گرم</small> , </span>
+          <span>موجودی :{{row.stock}}</span>
+        </div>
+        <button mat-raised-button class="card-button">اضافه کردن به سبد فروش</button>
       </div>
     </div>
 
+
+
+
+    <pagination-controls *ngIf="IsWait" (pageChange)="p = $event" previousLabel="" nextLabel="">
+    </pagination-controls>
 
   </div>
 </div>
