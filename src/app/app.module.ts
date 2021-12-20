@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ProductApiService } from './services/product-api.service';
 import { ProductsComponent } from './pages/products/products.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,8 @@ import { ProductsComponent } from './pages/products/products.component';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
-    
+    FormsModule,
+    NgxPaginationModule
 
   ],
   providers: [NotificationService,ProductApiService], 

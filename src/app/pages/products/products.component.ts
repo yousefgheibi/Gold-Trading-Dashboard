@@ -9,6 +9,7 @@ import { ProductApiService } from 'src/app/services/product-api.service';
 })
 export class ProductsComponent implements OnInit {
 
+  p : any;
   IsWait : Boolean = false;
   public productData : ProductModel[] = [];
   searchKey : string | undefined;
