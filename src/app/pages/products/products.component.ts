@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ProductModel } from 'src/app/models/product.model';
 import { ProductApiService } from 'src/app/services/product-api.service';
+import { NewProductComponent } from './new-product/new-product.component';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +15,7 @@ export class ProductsComponent implements OnInit {
   IsWait : Boolean = false;
   public productData : ProductModel[] = [];
   searchKey : string | undefined;
-  constructor(private _productApi : ProductApiService) { }
+  constructor(private _productApi : ProductApiService,public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.getProduct();
@@ -30,6 +32,10 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+
+  onCreateProduct(){
+    this.dialog.open(NewProductComponent);
+  }
 
   doSearch(searchKey : string) {
     let result : ProductModel[] = [];

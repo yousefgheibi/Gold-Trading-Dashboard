@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { ProductApiService } from './services/product-api.service';
 import { ProductsComponent } from './pages/products/products.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NewProductComponent } from './pages/products/new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     LoginComponent,
     HomeComponent,
     TiketComponent,
-    ProductsComponent
+    ProductsComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
