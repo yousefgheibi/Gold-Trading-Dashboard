@@ -58,7 +58,6 @@ export class NewProductComponent implements OnInit {
   onReset(){
     this.formValue.reset();
   }
-
   onChange(event : any ){
     const files = event.target.files;
     console.log(files);
