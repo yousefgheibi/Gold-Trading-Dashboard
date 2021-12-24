@@ -19,8 +19,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProduct();
-    
-  
+
+
   }
 
   getProduct(){
@@ -33,8 +33,11 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  onCreateProduct(){
+  onCreateProduct() {
     this.dialog.open(NewProductComponent);
+    const getNewProduct = setInterval(() => {
+      this.getProduct();
+    }, 2000);
   }
 
   doSearch(searchKey : string) {

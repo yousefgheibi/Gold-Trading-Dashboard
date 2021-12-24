@@ -15,4 +15,13 @@ export class ProductApiService {
       return res;
     }));
   }
+
+  postProduct(data : any) {
+    return this._http.post<any>("http://localhost:3000/products/",data)
+      .pipe(map((res:any)=>{
+        return res;
+      }))
+  }
+
+
 }
