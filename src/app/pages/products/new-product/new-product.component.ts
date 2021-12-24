@@ -14,7 +14,7 @@ export class NewProductComponent implements OnInit {
 
 
   formValue !: FormGroup;
-  ProductModelObj : ProductModel = new ProductModel();
+  productModelObj : ProductModel = new ProductModel();
 
   constructor(private _productapi:ProductApiService , private formbuilder : FormBuilder,
     private notificationService : NotificationService,
@@ -32,6 +32,36 @@ export class NewProductComponent implements OnInit {
       comment: [''],
       hire: ['']
     });
+  }
+  saveProduct(){
+      this.productModelObj.name = this.formValue.value.name;
+      this.productModelObj.weight = this.formValue.value.weight;
+      this.productModelObj.brand = this.formValue.value.brand;
+      this.productModelObj.caret = this.formValue.value.caret;
+      this.productModelObj.comment = this.formValue.value.comment;
+      this.productModelObj.hire = this.formValue.value.hire;
+
+      this._productapi.postProduct(this.productModelObj)
+        .subscribe(res=>{
+            console.log(res);
+            this.notificationService.success('محصول با موفقیت اضافه شد.');
+            this.formValue.reset();
+            this.dialogRef.close();
+
+          },
+          (err)=>{
+            console.log(err);
+            this.notificationService.warn('مشکلی پیش آمد.');
+            this.dialogRef.close();
+          })
+    }
+  onReset(){
+    this.formValue.reset();
+  }
+
+  onChange(event : any ){
+    const files = event.target.files;
+    console.log(files);
   }
 
 }

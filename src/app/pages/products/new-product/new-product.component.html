@@ -36,20 +36,20 @@
                     <div class="zone mb-3 mb-md-0">
                       <div class="dropZ">
                         <img src="../../../../assets/images/upload.png" class="uload-img">
-                        <div class="pt-3"><span>Drag and drop your file here</span></div>                    
+                        <div class="pt-3"><span>Drag and drop your file here</span></div>
                         <span>OR</span>
-                        <div class="selectFile">       
-                          <button mat-raised-button ><label for="file">آپلود عکس</label></button>              
-                          <input  class="pt-5" type="file" name="files[]" id="file">
+                        <div class="selectFile">
+                          <button mat-raised-button ><label for="file1">آپلود عکس</label></button>
+                          <input  class="pt-5" type="file" name="files[]" id="file1">
                         </div>
                         <p>File size limit : 2 MB</p>
                       </div>
-                    
+
                     </div>
                   </div>
                 <div class="btn-actions">
-                  <button mat-raised-button class="btn-action btn-save" >ذخیره کردن</button>
-                  <button mat-raised-button class="btn-action btn-clear">خالی کردن ستون ها</button>
+                  <button mat-raised-button class="btn-action btn-save" (click)="saveProduct()">ذخیره کردن</button>
+                  <button mat-raised-button class="btn-action btn-clear" (click)="onReset()">خالی کردن فیلد ها</button>
                   </div>
               </div>
               </div>
@@ -87,20 +87,20 @@
                   <div class="zone mb-3 mb-md-0">
                     <div class="dropZ">
                       <img src="../../../../assets/images/upload.png" class="uload-img">
-                      <div class="pt-3"><span>Drag and drop your file here</span></div>                    
+                      <div class="pt-3"><span>Drag and drop your file here</span></div>
                       <span>OR</span>
-                      <div class="selectFile">       
-                        <button mat-raised-button ><label for="file">آپلود عکس</label></button>              
-                        <input  class="pt-5" type="file" name="files[]" id="file">
+                      <div class="selectFile">
+                        <button mat-raised-button ><label for="file2">آپلود عکس</label></button>
+                        <input  class="pt-5" type="file" name="files[]" id="file2">
                       </div>
                       <p>File size limit : 2 MB</p>
                     </div>
-                  
+
                   </div>
                 </div>
               <div class="btn-actions">
-                <button mat-raised-button class="btn-action btn-save">ذخیره کردن</button>
-                <button mat-raised-button class="btn-action btn-clear">خالی کردن فیلد ها</button>
+                <button mat-raised-button class="btn-action btn-save" (click)="saveProduct()">ذخیره کردن</button>
+                <button mat-raised-button class="btn-action btn-clear" (click)="onReset()">خالی کردن فیلد ها</button>
                 </div>
             </div>
             </div>
@@ -136,20 +136,20 @@
                 <div class="zone mb-3 mb-md-0">
                   <div class="dropZ">
                     <img src="../../../../assets/images/upload.png" class="uload-img">
-                    <div class="pt-3"><span>Drag and drop your file here</span></div>                    
+                    <div class="pt-3"><span>Drag and drop your file here</span></div>
                     <span>OR</span>
-                    <div class="selectFile">       
-                      <button mat-raised-button ><label for="file">آپلود عکس</label></button>              
-                      <input  class="" type="file" name="files[]" id="file">
+                    <div class="selectFile">
+                      <button mat-raised-button ><label for="file3">آپلود عکس</label></button>
+                      <input  class="" type="file" name="files[]" id="file3">
                     </div>
                     <p>File size limit : 2 MB</p>
                   </div>
-                
+
                 </div>
               </div>
             <div class="btn-actions">
-              <button mat-raised-button class="btn-action btn-save">ذخیره کردن</button>
-              <button mat-raised-button class="btn-action btn-clear">خالی کردن فیلد ها</button>
+              <button mat-raised-button class="btn-action btn-save" (click)="saveProduct()">ذخیره کردن</button>
+              <button mat-raised-button class="btn-action btn-clear" (click)="onReset()">خالی کردن فیلد ها</button>
               </div>
           </div>
           </div>
