@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductModel } from 'src/app/models/product.model';
 import { ProductApiService } from 'src/app/services/product-api.service';
 import { NewProductComponent } from './new-product/new-product.component';
+import {NotificationService} from "../../services/notification.service";
+import {EditProductComponent} from "./edit-product/edit-product.component";
 
 @Component({
   selector: 'app-products',
@@ -15,7 +17,9 @@ export class ProductsComponent implements OnInit {
   IsWait : Boolean = false;
   public productData : ProductModel[] = [];
   searchKey : string | undefined;
-  constructor(private _productApi : ProductApiService,public dialog : MatDialog) { }
+  selectedrow : any;
+
+  constructor(private _productApi : ProductApiService,public dialog : MatDialog , private _notificationService : NotificationService) { }
 
   ngOnInit(): void {
     this.getProduct();
@@ -31,7 +35,6 @@ export class ProductsComponent implements OnInit {
         this.IsWait = true;
     })
   }
-
 
   onCreateProduct() {
     this.dialog.open(NewProductComponent);
@@ -56,6 +59,34 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+  deleteProduct(row: any){
+    let c = confirm("آیا از حذف کردن این محصول اطمینان دارید ؟");
+    if (c) {
+      this._productApi.deleteProduct(row.id).subscribe(res=>{
+        this._notificationService.success('محصول با موفقیت حذف شد.');
+        this.getProduct();
+      });
+    }
+  }
 
-
+  editProduct(row :any){
+    this.selectedrow = row;
+    this.dialog.open(EditProductComponent,{
+      width:'800px',
+      data : {
+        id : this.selectedrow.id,
+        brand : this.selectedrow.brand,
+        name : this.selectedrow.name,
+        weight : this.selectedrow.weight,
+        caret : this.selectedrow.caret,
+        comment : this.selectedrow.comment,
+        image : this.selectedrow.image,
+        stock : this.selectedrow.stock,
+        hire : this.selectedrow.hire
+      }
+    });
+    setInterval(()=>{
+      this.getProduct();
+    },1000);
+  }
 }

@@ -20,6 +20,7 @@ import { ProductApiService } from './services/product-api.service';
 import { ProductsComponent } from './pages/products/products.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
+import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NewProductComponent } from './pages/products/new-product/new-product.co
     HomeComponent,
     TiketComponent,
     ProductsComponent,
-    NewProductComponent
+    NewProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

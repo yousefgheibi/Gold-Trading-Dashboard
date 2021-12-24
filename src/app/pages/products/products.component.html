@@ -25,10 +25,10 @@
       <div class="card-sl">
 
         <div class="card-image"><img src="{{row.image}}" class="w-100" alt="{{row.name}}" /></div>
-        <button class="card-action" mat-icon-button color="accent">
+        <button (click)="deleteProduct(row)" class="card-action" mat-icon-button color="accent">
           <mat-icon>delete_outline</mat-icon>
         </button>
-        <button class="card-action" mat-icon-button color="accent">
+        <button (click)="editProduct(row)" class="card-action" mat-icon-button color="accent">
           <mat-icon>edit</mat-icon>
         </button>
 
