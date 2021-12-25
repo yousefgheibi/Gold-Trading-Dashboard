@@ -8,19 +8,18 @@ import {ProductListModel} from "../models/productlist.model";
 })
 export class CartServiceService {
   public cartItemList: any = [];
-  public productList = new BehaviorSubject<ProductListModel>({});
-  private _productList = this.productList.asObservable();
+  private productList$ = new BehaviorSubject<ProductListModel>({});
+  productList = this.productList$.asObservable();
+
   list: ProductListModel = {};
   show : boolean = false;
   constructor() { }
 
-  getProducts() {
-    return this.productList.asObservable();
-  }
+
 
   setProduct(product: any) {
     this.cartItemList.push(...product);
-    this.productList.next(product);
+    this.productList$.next(product);
   }
 
   addToCard(product: ProductModel) {
@@ -28,7 +27,7 @@ export class CartServiceService {
       this.list[product.id] = [];
     }
     this.list[product.id] = this.list[product.id].concat(product)
-    this.productList.next(this.list);
+    this.productList$.next(this.list);
     // console.log(this.list);
     this.show =true;
 
@@ -36,25 +35,25 @@ export class CartServiceService {
 
   removeCartItem(product: ProductModel) {
     this.list[product.id] = [];
-    this.productList.next(this.list);
+    this.productList$.next(this.list);
   }
 
   removeAllCart() {
     this.cartItemList = [];
-    this.productList.next(this.cartItemList);
+    this.productList$.next(this.cartItemList);
     this.show = false;
 
   }
 
   addMore(product: ProductModel) {
     this.list[product.id].push(product);
-    this.productList.next(this.list);
+    this.productList$.next(this.list);
   }
 
   removeFromProductList(product: ProductModel) {
     if (this.list[product.id].length) {
       this.list[product.id].pop();
-      this.productList.next(this.list);
+      this.productList$.next(this.list);
     }
   }
 
