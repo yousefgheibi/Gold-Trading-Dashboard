@@ -21,6 +21,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
 import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
+import {CartComponent} from "./pages/cart/cart.component";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
     SidenavComponent,
     DynamicClockComponent,
     LoginComponent,
+    CartComponent,
     HomeComponent,
     TiketComponent,
     ProductsComponent,
@@ -49,7 +51,7 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
     NgxPaginationModule
 
   ],
-  providers: [NotificationService,ProductApiService], 
+  providers: [NotificationService,ProductApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { ProductApiService } from 'src/app/services/product-api.service';
 import { NewProductComponent } from './new-product/new-product.component';
 import {NotificationService} from "../../services/notification.service";
 import {EditProductComponent} from "./edit-product/edit-product.component";
+import {CartServiceService} from "../../services/cart-service.service";
 
 @Component({
   selector: 'app-products',
@@ -19,7 +20,10 @@ export class ProductsComponent implements OnInit {
   searchKey : string | undefined;
   selectedrow : any;
 
-  constructor(private _productApi : ProductApiService,public dialog : MatDialog , private _notificationService : NotificationService) { }
+  constructor(private _productApi : ProductApiService,
+              public dialog : MatDialog , private _cartService : CartServiceService,
+              private _notificationService : NotificationService) { }
+
 
   ngOnInit(): void {
     this.getProduct();
@@ -89,5 +93,11 @@ export class ProductsComponent implements OnInit {
     setInterval(()=>{
       this.getProduct();
     },1000);
+  }
+
+  add2Card(row :any){
+    this._cartService.addToCard(row);
+    this._notificationService.success('محصول با موفقیت به سبد فروش اضافه شد.');
+
   }
 }

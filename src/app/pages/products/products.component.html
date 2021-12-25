@@ -33,7 +33,7 @@
         </button>
 
         <div class="card-heading">{{row.name}}</div>
-        <div class="card-text">{{row.price | currency: 'تومان ' :'symbol-narrow':'4.0'}}</div><br>
+        <div class="card-text">{{row.price | currency: '  ' :'symbol-narrow':'4.0'}} تومان </div><br>
         <div class="card-text"
           style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">
           {{row.comment}}
@@ -42,7 +42,7 @@
           <span *ngIf="row.weight">{{row.weight}} <small> گرم</small> , </span>
          <span><small>موجودی :{{row.stock}}</small></span>
         </div>
-        <button mat-raised-button class="card-button">اضافه کردن به سبد فروش</button>
+        <button mat-raised-button class="card-button" (click)="add2Card(row)">اضافه کردن به سبد فروش</button>
       </div>
     </div>
 
