@@ -35,7 +35,8 @@ export class EditProductComponent implements OnInit {
       caret : this.recievedrow.caret,
       comment : this.recievedrow.comment,
       image : this.recievedrow.image,
-      stock : this.recievedrow.stock
+      stock : this.recievedrow.stock,
+      price : this.recievedrow.price
     });
   }
 
@@ -48,6 +49,7 @@ export class EditProductComponent implements OnInit {
     this.productModelObj.caret = this.formValue.value.caret;
     this.productModelObj.comment = this.formValue.value.comment;
     this.productModelObj.stock = this.formValue.value.stock;
+    this.productModelObj.price = this.formValue.value.price;
 
     this._productApi.updateProduct(this.productModelObj,this.productModelObj.id)
       .subscribe(res=>{

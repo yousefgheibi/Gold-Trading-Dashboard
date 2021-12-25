@@ -13,10 +13,16 @@
           <input matInput formControlName="name" value="{{recievedrow.name}}">
         </mat-form-field>
 
+        <mat-form-field appearance="legacy">
+          <mat-label>قیمت</mat-label>
+          <input matInput formControlName="price" value="{{recievedrow.price}}">
+        </mat-form-field>
+
         <mat-form-field appearance="legacy" *ngIf="recievedrow.brand">
           <mat-label>برند</mat-label>
           <input matInput formControlName="brand" value="{{recievedrow.brand}}">
         </mat-form-field>
+
 
         <mat-form-field appearance="legacy" *ngIf="recievedrow.weight">
           <mat-label>وزن</mat-label>

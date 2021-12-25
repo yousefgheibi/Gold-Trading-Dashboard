@@ -16,21 +16,22 @@ export class NewProductComponent implements OnInit {
   formValue !: FormGroup;
   productModelObj : ProductModel = new ProductModel();
 
-  constructor(private _productapi:ProductApiService , private formbuilder : FormBuilder,
+  constructor(private _productApi:ProductApiService , private formBuilder : FormBuilder,
     private notificationService : NotificationService,
     public dialogRef: MatDialogRef<NewProductComponent>) { }
 
 
   ngOnInit(): void {
 
-    this.formValue = this.formbuilder.group({
+    this.formValue = this.formBuilder.group({
       id: (null),
       name: [''],
       brand: [''],
       weight: [''],
       caret: [''],
       comment: [''],
-      hire: ['']
+      hire: [''],
+      price: ['']
     });
   }
   saveProduct(){
@@ -40,8 +41,9 @@ export class NewProductComponent implements OnInit {
       this.productModelObj.caret = this.formValue.value.caret;
       this.productModelObj.comment = this.formValue.value.comment;
       this.productModelObj.hire = this.formValue.value.hire;
+      this.productModelObj.price = this.formValue.value.price;
 
-      this._productapi.postProduct(this.productModelObj)
+      this._productApi.postProduct(this.productModelObj)
         .subscribe(res=>{
             console.log(res);
             this.notificationService.success('محصول با موفقیت اضافه شد.');

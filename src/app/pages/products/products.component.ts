@@ -82,7 +82,8 @@ export class ProductsComponent implements OnInit {
         comment : this.selectedrow.comment,
         image : this.selectedrow.image,
         stock : this.selectedrow.stock,
-        hire : this.selectedrow.hire
+        hire : this.selectedrow.hire,
+        price : this.selectedrow.price
       }
     });
     setInterval(()=>{

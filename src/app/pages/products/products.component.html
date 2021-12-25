@@ -33,6 +33,7 @@
         </button>
 
         <div class="card-heading">{{row.name}}</div>
+        <div class="card-text">{{row.price | currency: 'تومان ' :'symbol-narrow':'4.0'}}</div><br>
         <div class="card-text"
           style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">
           {{row.comment}}
