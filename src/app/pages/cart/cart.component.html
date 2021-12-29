@@ -2,8 +2,13 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col"></th>
-      <th scope="col"></th>
+      <th scope="col">
+        <button mat-icon-button (click)="addShopping()"><mat-icon>add_shopping_cart</mat-icon></button>
+        <button mat-icon-button (click)="exportFactor()"><mat-icon>assignment_turned_in</mat-icon></button>
+       </th>
+      <th scope="col">
+
+      </th>
       <th style="width: 10%;" scope="col"></th>
       <th scope="col">عیار</th>
       <th scope="col">وزن</th>
@@ -44,7 +49,7 @@
           تومان </p></td>
         <td>
           <button class="mt-3" (click)="removeItem(product)" mat-icon-button color="warn">
-            <mat-icon>delete</mat-icon>
+            <mat-icon>close</mat-icon>
           </button>
         </td>
       </ng-container>
@@ -56,9 +61,6 @@
   <div class="col-md-4" style="float: left;">
     <ul>
       <li><p>جمع سبد فروش :<span>{{totalPrice | currency: '  ' :'symbol-narrow':'4.0'}} تومان </span></p></li>
-      <li>
-        <button mat-flat-button class="btn-del" (click)="emptyCart()">حذف همه</button>
-      </li>
     </ul>
   </div>
 </ng-container>
