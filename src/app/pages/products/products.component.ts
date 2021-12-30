@@ -63,6 +63,9 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+  clearSearch(){
+    this.searchKey = "";
+  }
   deleteProduct(row: any){
     let c = confirm("آیا از حذف کردن این محصول اطمینان دارید ؟");
     if (c) {
