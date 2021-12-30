@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path :'' , component: DefaultComponent ,
     children:[
-  {path:'',component:HomeComponent },
+  {path:'home',component:HomeComponent },
   {path:'products',component:ProductsComponent},
   {path:'factors',component:FactorsComponent},
   {path:'cart',component:CartComponent},
