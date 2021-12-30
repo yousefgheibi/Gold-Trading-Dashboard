@@ -5,6 +5,7 @@ import {ProductModel} from "../../models/product.model";
 import {CartServiceService} from "../../services/cart-service.service";
 import {share, shareReplay} from "rxjs";
 import { Router } from '@angular/router';
+import { ShowFactorComponent } from '../factors/show-factor/show-factor.component';
 
 
 @Component({
@@ -70,4 +71,12 @@ export class CartComponent implements OnInit {
           })
 
         }
+
+  showFactor(){
+    const dialogRef = this.dialog.open(ShowFactorComponent, {
+      width: '50%',
+      height: '90%'
+     });
+
+  }
 }

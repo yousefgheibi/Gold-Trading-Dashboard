@@ -22,6 +22,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
 import { EditProductComponent } from './pages/products/edit-product/edit-product.component';
 import {CartComponent} from "./pages/cart/cart.component";
+import { FactorsComponent } from './pages/factors/factors.component';
+import { ShowFactorComponent } from './pages/factors/show-factor/show-factor.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,11 @@ import {CartComponent} from "./pages/cart/cart.component";
     CartComponent,
     HomeComponent,
     TiketComponent,
+    FactorsComponent,
     ProductsComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    ShowFactorComponent
   ],
   imports: [
     BrowserModule,

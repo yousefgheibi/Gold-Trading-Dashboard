@@ -1,0 +1,82 @@
+body{
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 90%;
+    direction: rtl;
+    background: url("../../../../assets/images/factor-background.png");
+  }
+  h2{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "vazir";
+    margin-top: 1.2rem;
+  }
+  .text-box{
+    border-radius: 10px;
+    border: 1px solid #d1b266;
+    background: #fff;
+    padding: 7px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 11px;
+  }
+  .table-box{
+    border-radius: 10px;
+    border: 1px solid #d1b266;
+    background: #fff;
+    height: 450px;
+  }
+  input{
+    border: none;
+    background: transparent;
+  }
+  
+  th{
+    font-size: 12px;
+  }
+  td{
+    height: 30px;
+    font-size: 10px;
+  }
+  .sign-box{
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #d1b266;
+    text-align: center;
+  
+  }
+  .sign-box p{
+    margin-top: 100px;
+    font-size: 8px;
+  }
+  .address{
+    margin-top: 20px;
+  }
+  .address p{
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  ul{
+    float: left;
+  }
+  li{
+    font-size: 9px;
+    list-style: none;
+    font-weight: bold;
+  }
+  li span{
+    float: left;
+  }
+  .copy-right p{
+    font-size: 6px;
+  }
+  .get-price{
+    margin-top: 130px;
+  }
+  //@media print{
+  //  .doNotPrint{position: E !important;}
+  //}
+  

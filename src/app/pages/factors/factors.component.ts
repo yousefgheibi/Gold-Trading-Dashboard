@@ -12,4 +12,5 @@ export class FactorsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
