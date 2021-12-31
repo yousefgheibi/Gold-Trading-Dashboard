@@ -30,7 +30,6 @@ export class NewProductComponent implements OnInit {
       weight: [''],
       caret: [''],
       comment: [''],
-      hire: [''],
       price: ['']
     });
   }
@@ -40,7 +39,6 @@ export class NewProductComponent implements OnInit {
       this.productModelObj.brand = this.formValue.value.brand;
       this.productModelObj.caret = this.formValue.value.caret;
       this.productModelObj.comment = this.formValue.value.comment;
-      this.productModelObj.hire = this.formValue.value.hire;
       this.productModelObj.price = this.formValue.value.price;
 
       this._productApi.postProduct(this.productModelObj)

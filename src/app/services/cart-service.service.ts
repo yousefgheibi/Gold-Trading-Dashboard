@@ -35,6 +35,7 @@ export class CartServiceService {
 
   removeCartItem(product: ProductModel) {
     this.list[product.id] = [];
+    delete this.list[product.id];
     this.productList$.next(this.list);
   }
 
@@ -53,6 +54,9 @@ export class CartServiceService {
   removeFromProductList(product: ProductModel) {
     if (this.list[product.id].length) {
       this.list[product.id].pop();
+      if (!this.list[product.id].length){
+        delete this.list[product.id];
+      }
       this.productList$.next(this.list);
     }
   }

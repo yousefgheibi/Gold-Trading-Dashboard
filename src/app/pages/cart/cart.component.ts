@@ -18,12 +18,10 @@ export class CartComponent implements OnInit {
 
   public products: ProductListModel = {};
   selectedRow !: any;
-  show: boolean = false;
   totalPrice: number = 0;
 
   constructor(public router : Router,private cartService: CartServiceService,
               public dialog: MatDialog) {
-    this.show = this.cartService.show;
   }
 
   ngOnInit(): void {
@@ -33,9 +31,13 @@ export class CartComponent implements OnInit {
           for (let id in res) {
             let value = res[id];
           }
+
+          console.log(this.products);          
           this.calculatePrice();
+         
         },
       );
+
   }
 
   removeItem(item: any) {
@@ -59,24 +61,26 @@ export class CartComponent implements OnInit {
     }
   }
 
-  addShopping(){
-    this.router.navigate(['/products']);
-  }
-
-  exportFactor(){
-    this.cartService.productList
-      .subscribe(res => {
-        this.selectedRow = res;
-        console.log(this.selectedRow);
-          })
-
-        }
-
   showFactor(){
+    this.cartService.productList.subscribe(res => {
+      this.selectedRow = res;
+      for (let id in res) {
+        let value = res[id];
+      }
+    })
     const dialogRef = this.dialog.open(ShowFactorComponent, {
       width: '50%',
-      height: '90%'
-     });
+      height: '90%',
+      data : {
+      row : this.selectedRow,
+      totalPrice : this.totalPrice
 
+    }
+  });
+
+  }
+
+  hasProducts():boolean{
+    return this.products&& Object.keys(this.products).length > 0;
   }
 }

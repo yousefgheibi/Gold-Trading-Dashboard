@@ -1,10 +1,8 @@
-<ng-container *ngIf="show">
+<ng-container *ngIf="hasProducts()">
   <table class="table">
     <thead>
     <tr>
       <th scope="col">
-        <!-- <button mat-icon-button (click)="addShopping()"><mat-icon>add_shopping_cart</mat-icon></button>
-        <button mat-icon-button (click)="exportFactor()"><mat-icon>assignment_turned_in</mat-icon></button> -->
         <button mat-raised-button class="btn-save" (click)="showFactor()">
          مشاهده فاکتور
         </button> 
@@ -69,7 +67,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="!show">
+<ng-container *ngIf="!hasProducts()">
   <div class="container">
     <div class="center">
       <img src="../../../assets/images/product.png" alt="" class="mb-3">
