@@ -9,6 +9,7 @@ import { InvoiceApiService } from 'src/app/services/invoice-api.service';
 })
 export class FactorsComponent implements OnInit {
   q : any;
+  searchKey : string = '';
   invoiceList : InvioceModel []= [];
   IsWait : boolean = false;
   constructor(private _invoiceApi : InvoiceApiService) { }
@@ -22,6 +23,25 @@ export class FactorsComponent implements OnInit {
       this.invoiceList = res;
       this.IsWait = true;
     });
+  }
+  doSearch(searchKey : string) {
+    let result : InvioceModel[] = [];
+    if(searchKey.length > 2) {
+      result = this.invoiceList.filter((item) => {
+        // @ts-ignore
+        return !(item.name.trim().indexOf(this.searchKey.trim()) <= -1);
+      });
+    }
+    if(result.length > 0 ){
+      this.invoiceList = result;
+    }
+    else{
+        this.getInvoices();
+    }
+  }
+
+  clearSearch(){
+    this.searchKey = "";
   }
 
 }

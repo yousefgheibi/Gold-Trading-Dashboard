@@ -8,8 +8,8 @@
 
     <div class="col-7 col-md-8 col-lg-10">
       <mat-form-field>
-        <input matInput placeholder="جستجو" >
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <input matInput placeholder="جستجو" name="searchKey" [(ngModel)]="searchKey" (ngModelChange)="doSearch($event)">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
