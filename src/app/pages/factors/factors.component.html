@@ -17,3 +17,31 @@
   </div>
 </div>
 <mat-divider></mat-divider>
+
+
+<mat-progress-spinner class="loader" mode="indeterminate" *ngIf="!IsWait">
+</mat-progress-spinner>
+
+ <table class="table table-striped" *ngIf="IsWait">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">نام مشتری</th>
+      <th scope="col">تاریخ فروش</th>
+      <th scope="col">مبلغ فاکتور</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of invoiceList; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{row.name}}</td>
+      <td>{{row.created_at}}</td>
+      <td>{{row.totalPrice  | currency: '  ' :'symbol-narrow':'4.0'}} تومان</td>
+      <td><mat-icon>launch</mat-icon></td>
+      <td><mat-icon class="close-icon">close</mat-icon></td>
+    </tr>
+   
+  </tbody>
+</table>

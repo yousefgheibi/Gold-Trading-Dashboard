@@ -4,7 +4,8 @@ import { ProductListModel } from 'src/app/models/productlist.model';
 import { CartComponent } from '../../cart/cart.component';
 import * as momentJalaali from "moment-jalaali";
 import { InvioceModel } from 'src/app/models/invoice.model';
-import { ProductModel } from 'src/app/models/product.model';
+import { InvoiceApiService } from 'src/app/services/invoice-api.service';
+import { NotificationService } from 'src/app/services/notification.service';
 @Component({
   selector: 'app-show-factor',
   templateUrl: './show-factor.component.html',
@@ -18,27 +19,35 @@ export class ShowFactorComponent implements OnInit {
   public customerName : string = '';
 
   constructor(public dialogRef : MatDialogRef<CartComponent>,
-    @Inject(MAT_DIALOG_DATA) public data : any) {
+    @Inject(MAT_DIALOG_DATA) public data : any , private _invoiceApi : InvoiceApiService,
+    private notificationService :NotificationService ) {
+      
       this.products = data.row;
       this.totalPrice = data.totalPrice;
       
      }
 
   ngOnInit(): void {
-    this.now = momentJalaali().format('jYYYY/jM/jD');
+    this.now = momentJalaali().format('jYYYY/jM/jD - HH:mm');
     
   }
 
-  sendData(created_at: string ,name: string) {
+  postInvoice(created_at: string ,name: string) {
 
     const invoice : InvioceModel = {
       name,
       items : this.products,
-      created_at
-
+      created_at,
+      totalPrice : this.totalPrice
     }
 
-    console.log(invoice);
+    this._invoiceApi.postInvoice(invoice).subscribe(res => {
+      this.notificationService.success('فاکتور با موفقیت ذخیره شد.');
+      this.dialogRef.close();
+    },
+    (err) =>{
+      this.notificationService.warn('مشکلی پیش آمد.');
+      this.dialogRef.close();
+    });
   }
-
 }

@@ -7,4 +7,5 @@ export interface InvioceModel{
     created_at : string;
     updated_at ?: string;
     items : ProductListModel;
+    totalPrice : number;
 }
