@@ -8,7 +8,7 @@ import { InvoiceApiService } from 'src/app/services/invoice-api.service';
   styleUrls: ['./factors.component.scss']
 })
 export class FactorsComponent implements OnInit {
-
+  q : any;
   invoiceList : InvioceModel []= [];
   IsWait : boolean = false;
   constructor(private _invoiceApi : InvoiceApiService) { }

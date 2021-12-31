@@ -34,7 +34,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of invoiceList; index as i">
+    <tr *ngFor="let row of invoiceList |  paginate: { itemsPerPage: 8, currentPage: q } ; index as i">
       <th scope="row">{{i+1}}</th>
       <td>{{row.name}}</td>
       <td>{{row.created_at}}</td>
@@ -42,6 +42,7 @@
       <td><mat-icon>launch</mat-icon></td>
       <td><mat-icon class="close-icon">close</mat-icon></td>
     </tr>
-   
   </tbody>
 </table>
+<pagination-controls (pageChange)="q = $event" previousLabel="" nextLabel="">
+</pagination-controls>
