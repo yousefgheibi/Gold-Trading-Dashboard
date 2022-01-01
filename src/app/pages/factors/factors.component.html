@@ -44,5 +44,5 @@
     </tr>
   </tbody>
 </table>
-<pagination-controls (pageChange)="q = $event" previousLabel="" nextLabel="">
+<pagination-controls (pageChange)="q = $event" previousLabel="" nextLabel="" *ngIf="IsWait">
 </pagination-controls>
