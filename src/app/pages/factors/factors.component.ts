@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InvioceModel } from 'src/app/models/invoice.model';
 import { InvoiceApiService } from 'src/app/services/invoice-api.service';
-
+import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-factors',
   templateUrl: './factors.component.html',
@@ -12,6 +12,7 @@ export class FactorsComponent implements OnInit {
   searchKey : string = '';
   invoiceList : InvioceModel []= [];
   IsWait : boolean = false;
+  fileName = new Date().toISOString().slice(0, 10);
   constructor(private _invoiceApi : InvoiceApiService) { }
 
   ngOnInit(): void {
@@ -43,5 +44,15 @@ export class FactorsComponent implements OnInit {
   clearSearch(){
     this.searchKey = "";
   }
+
+  exportExcel():void{
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, this.fileName +'.xlsx');
+
+  }
+
 
 }

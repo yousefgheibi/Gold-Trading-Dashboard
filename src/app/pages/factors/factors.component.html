@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content">
     <div class="col-5 col-md-4 col-lg-2  m-0 p-1 pb-3">
-      <button mat-raised-button class="btn-create">
+      <button mat-raised-button class="btn-create" (click)="exportExcel()">
         <mat-icon>insert_drive_file</mat-icon>دریافت فایل
       </button>
     </div>
@@ -22,7 +22,7 @@
 <mat-progress-spinner class="loader" mode="indeterminate" *ngIf="!IsWait">
 </mat-progress-spinner>
 
- <table class="table table-striped" *ngIf="IsWait">
+ <table class="table table-striped" *ngIf="IsWait" >
   <thead>
     <tr>
       <th scope="col">#</th>
