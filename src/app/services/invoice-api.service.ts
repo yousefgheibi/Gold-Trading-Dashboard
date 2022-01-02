@@ -23,4 +23,11 @@ export class InvoiceApiService {
       }))
   }
 
+  deleteFacors(id : number) {
+    return this._http.delete<any>("http://localhost:3000/invoices/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
 }

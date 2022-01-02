@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InvioceModel } from 'src/app/models/invoice.model';
 import { InvoiceApiService } from 'src/app/services/invoice-api.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-factors',
@@ -13,7 +14,7 @@ export class FactorsComponent implements OnInit {
   invoiceList : InvioceModel []= [];
   IsWait : boolean = false;
   fileName = new Date().toISOString().slice(0, 10);
-  constructor(private _invoiceApi : InvoiceApiService) { }
+  constructor(private _invoiceApi : InvoiceApiService, private _notification : NotificationService) { }
 
   ngOnInit(): void {
     this.getInvoices();
@@ -25,6 +26,21 @@ export class FactorsComponent implements OnInit {
       this.IsWait = true;
     });
   }
+
+  deleteFactor(row: any) {
+    let c = confirm("آیا از حذف کردن این فاکتور اطمینان دارید ؟");
+    if (c) {
+      this._invoiceApi.deleteFacors(row.id).subscribe(res => {
+          this._notification.success("فاکتور با موفقیت حذف شد.");
+          this.getInvoices();
+        },
+        (err) => {
+          this._notification.warn("با مشکلی روبه برو شدیم.");
+        })
+    }
+  }
+
+
   doSearch(searchKey : string) {
     let result : InvioceModel[] = [];
     if(searchKey.length > 2) {
