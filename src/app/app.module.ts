@@ -25,6 +25,9 @@ import {CartComponent} from "./pages/cart/cart.component";
 import { FactorsComponent } from './pages/factors/factors.component';
 import { ShowFactorComponent } from './pages/factors/show-factor/show-factor.component';
 import { FactorComponent } from './pages/factors/factor/factor.component';
+import { LineChartComponent } from './shared/charts/line-chart/line-chart.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { BarChartComponent } from './shared/charts/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { FactorComponent } from './pages/factors/factor/factor.component';
     NewProductComponent,
     EditProductComponent,
     ShowFactorComponent,
-    FactorComponent
+    FactorComponent,
+    LineChartComponent,
+    BarChartComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,8 @@ import { FactorComponent } from './pages/factors/factor/factor.component';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HighchartsChartModule,
 
   ],
   providers: [NotificationService,ProductApiService],
