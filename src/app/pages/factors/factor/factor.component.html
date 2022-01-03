@@ -1,16 +1,16 @@
-<button mat-raised-button class="btn-print">چاپ کردن</button>
+<button mat-raised-button class="btn-print"  (click)="printInvoice()">چاپ کردن</button>
 <div class="container-fluid body" id="print-section">
   <div class="row justify-content-center mb-3 mt-3">
     <div class="col-5">
-      <img src="../../../../assets/images/Logo.png" class="w-100">
+      <img src="../../../../assets/images/Logo.png" class="w-100 factor-logo">
     </div>
    
   </div>
   <div class="row justify-content-center">
     <div class="col-12 mb-2 text-box">
       <div class="row top-section  justify-content-between">
-        <div class="col-4">تاریخ : {{factor.created_at}}</div>
-        <div class="col-4">
+        <div class="col-4 date-field">تاریخ : {{factor.created_at}}</div>
+        <div class="col-4 id-field">
           شماره فاکتور : {{factor.id}}
         </div>
       </div>
