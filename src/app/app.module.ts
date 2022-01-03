@@ -24,6 +24,7 @@ import { EditProductComponent } from './pages/products/edit-product/edit-product
 import {CartComponent} from "./pages/cart/cart.component";
 import { FactorsComponent } from './pages/factors/factors.component';
 import { ShowFactorComponent } from './pages/factors/show-factor/show-factor.component';
+import { FactorComponent } from './pages/factors/factor/factor.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ShowFactorComponent } from './pages/factors/show-factor/show-factor.com
     ProductsComponent,
     NewProductComponent,
     EditProductComponent,
-    ShowFactorComponent
+    ShowFactorComponent,
+    FactorComponent
   ],
   imports: [
     BrowserModule,

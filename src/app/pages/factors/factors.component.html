@@ -39,7 +39,7 @@
       <td>{{row.name}}</td>
       <td>{{row.created_at}}</td>
       <td>{{row.totalPrice  | currency: '  ' :'symbol-narrow':'4.0'}} تومان</td>
-      <td><mat-icon>launch</mat-icon></td>
+      <td><mat-icon (click)="editFactor(row)">launch</mat-icon></td>
       <td><mat-icon (click)="deleteFactor(row)" class="close-icon">close</mat-icon></td>
     </tr>
   </tbody>
