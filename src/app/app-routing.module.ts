@@ -12,12 +12,13 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path :'' , component: DefaultComponent ,
     children:[
+  
   {path:'home',component:HomeComponent },
   {path:'products',component:ProductsComponent},
   {path:'factors',component:FactorsComponent},
   {path:'cart',component:CartComponent},
   {path:'ticket',component:TiketComponent},
-  {path:'**' , redirectTo : ''}
+  {path:'**' , redirectTo : 'home'}
       ]}
 ];
 
