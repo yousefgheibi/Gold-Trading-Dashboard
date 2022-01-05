@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar   [ngStyle]="{'position': (mobile) ? 'fixed' : 'sticky'}">
     <mat-toolbar-row class="justify-content-between">
         <button *ngIf="mobile" mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
