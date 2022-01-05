@@ -35,3 +35,15 @@ text-align: center;
 :host ::ng-deep .loader circle{
 stroke: #cda64b;
 }
+
+
+@media only screen and (max-width: 480px) {
+  
+  table th{
+      font-size: 0.9rem;
+  }
+  table td{
+      font-size: 0.7rem;
+  }
+
+}

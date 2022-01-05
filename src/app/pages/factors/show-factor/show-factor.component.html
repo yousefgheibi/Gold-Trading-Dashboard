@@ -2,7 +2,7 @@
 
 <div class="container-fluid body" id="print-section">
   <div class="row justify-content-center mb-3 mt-3">
-    <div class="col-5">
+    <div class="col-10 col-md-5">
       <img src="../../../../assets/images/Logo.png" class="w-100">
     </div>
    
@@ -10,10 +10,10 @@
   <div class="row justify-content-center">
     <div class="col-12 mb-2 text-box">
       <div class="row top-section  justify-content-between">
-        <div class="col-4">تاریخ : {{now}}</div>
+        <div class="col-6 col-md-4 date-field">تاریخ : {{now}}</div>
       </div>
     </div>
-    <div class="col-12 mb-2 text-box">
+    <div class="col-12 mb-2 text-box name-field">
       <p>فاکتور آقای/ خانم :
         <input type="text" [(ngModel)]="customerName" placeholder=".........................">
       </p>
@@ -37,7 +37,7 @@
         <tbody>
           <tr *ngFor="let item of products | keyvalue">
             <ng-container *ngIf="item.value[0] as product">
-              <td><img style="width: 30px;border-radius: 3px;" src="{{product.image}}" alt="{{product.name}}"></td>
+              <td><img class="item-img" src="{{product.image}}" alt="{{product.name}}"></td>
               <td><p class="product-item">{{product.name}}</p></td>
               <td></td>
               <td><p class="product-item">{{product.caret}}</p></td>

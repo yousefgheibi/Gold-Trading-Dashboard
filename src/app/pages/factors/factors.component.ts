@@ -43,7 +43,7 @@ export class FactorsComponent implements OnInit {
     }
   }
 
-  editFactor(row:any){
+  showFactor(row:any){
     this.selectedRow = row;
     this.dialog.open(FactorComponent,{
       width:'800px',

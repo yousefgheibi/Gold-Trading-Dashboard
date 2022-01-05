@@ -50,3 +50,33 @@ body{
     font-size: 14px;
   }
 
+  .item-img{
+    width: 30px;
+    border-radius: 3px;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .date-field , .id-field , .name-field{
+      font-size: 0.7rem;
+    }
+
+    .table > :not(caption) > * > *{
+      padding: 5px !important;
+    }
+
+    .ng-star-inserted{
+      font-size: 0.6rem;
+    }
+    table th{
+      font-size: 0.65rem;
+    }
+
+    table td{
+      font-size: 0.40rem;
+    }
+
+    .item-img{
+      width: 20px;
+    }
+
+}

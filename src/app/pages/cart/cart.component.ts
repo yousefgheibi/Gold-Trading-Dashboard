@@ -69,8 +69,8 @@ export class CartComponent implements OnInit {
       }
     })
     const dialogRef = this.dialog.open(ShowFactorComponent, {
-      width: '50%',
-      height: '90%',
+      width:'800px',
+      height:'90%',
       data : {
       row : this.selectedRow,
       totalPrice : this.totalPrice

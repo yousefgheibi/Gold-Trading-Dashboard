@@ -1,3 +1,7 @@
+.layers{
+   min-height: 155px;
+   max-height: 155px;
+}
 .layers h5{
     font-family: vazir;
     font-size: 1rem;
@@ -56,9 +60,7 @@
 .layer4{
     background-color: #eeffef;
 }
-    // .bgc-white, .bgcH-white:hover {
-    //    // background-color: #fff!important;
-    // }
+    
     .bd {
         border: 1px solid rgba(0,0,0,.0625)!important;
     }
@@ -86,9 +88,6 @@
         width: 100%!important;
     }
 
-
-   
-
     td{
         font-size: 14px;
     }
@@ -105,4 +104,30 @@
     background: #fdfdfd;
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
     
+    }
+
+
+    @media only screen and (max-width: 480px) {
+        .layers{
+            min-height: 140px;
+            max-height: 140px;
+        }
+        .layers p{
+            font-size: 0.8rem;
+        }
+        .peers span{
+            background: none;
+            padding: 0px;
+        }
+        .table-header{
+            font-size: 1rem;
+            padding-bottom: 10px;
+        }
+        table th{
+            font-size: 0.9rem;
+        }
+        table td{
+            font-size: 0.7rem;
+        }
+
     }
