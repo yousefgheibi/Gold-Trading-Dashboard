@@ -87,3 +87,13 @@ mat-progress-spinner{
 :host ::ng-deep .loader circle{
   stroke: #cda64b;
 }
+
+.card-sl .card-body{
+  min-height: 100px;
+}
+
+@media only screen and (max-width: 480px) {
+  .card-sl .card-body{
+    min-height: 120px;
+  }
+}

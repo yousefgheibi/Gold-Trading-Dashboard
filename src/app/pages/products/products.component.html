@@ -31,7 +31,7 @@
         <button (click)="editProduct(row)" class="card-action" mat-icon-button color="accent">
           <mat-icon>edit</mat-icon>
         </button>
-
+        <div class="card-body p-0">
         <div class="card-heading">{{row.name}}</div>
         <div class="card-text">{{row.price | currency: '  ' :'symbol-narrow':'4.0'}} تومان </div>
         <div class="card-text"
@@ -41,6 +41,7 @@
         <div class="card-text">
           <span *ngIf="row.weight">{{row.weight}} <small> گرم</small> , </span>
          <span><small>{{row.caret}}</small></span>
+        </div>
         </div>
         <button mat-raised-button class="card-button" (click)="add2Card(row)">اضافه کردن به سبد فروش</button>
       </div>

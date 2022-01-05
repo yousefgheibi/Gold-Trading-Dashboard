@@ -1,5 +1,6 @@
 mat-form-field{
   width: 100%;
+  font-size: 0.9rem;
 }
 .example-spacer {
   flex: 1 1 auto;
@@ -10,4 +11,18 @@ mat-form-field{
 
 .dialog-header{
   font-size: 15px;
+}
+
+textarea{
+  line-height: 1.5rem;
+}
+@media only screen and (max-width: 480px) {
+  .dialog-header{
+    font-size: 0.9rem;
+  }
+  textarea{
+    line-height: 1.3rem;
+    font-size: 0.8rem;
+  }
+
 }
