@@ -1,12 +1,13 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6" style="border-left: 1.5px dashed #0F172A;">
+        <div class="col-md-6"  [ngStyle]="{'border-left': (mobile) ? 'none' : '1.5px dashed #0F172A'}">
         <p><mat-icon>home</mat-icon>آدرس  : آذربایجان غربی ، ارومیه ، پاساژ پارک</p>
         <p><mat-icon>email</mat-icon>ایمیل : contact@yaraSystem.ir</p>
         <p><mat-icon>smartphone</mat-icon>شماره تماس :  0443 272 4524</p>
         <p><mat-icon>support_agent</mat-icon> شماره گویا : 123456789</p>
        
-        <iframe class="mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.5730571179456!2d45.07327017961307!3d37.55162117056343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400553432051758d%3A0xfe47a89ce1f004df!2sPark%20Hotel!5e0!3m2!1sen!2s!4v1627539881729!5m2!1sen!2s" width="475" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.5730571179456!2d45.07327017961307!3d37.55162117056343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400553432051758d%3A0xfe47a89ce1f004df!2sPark%20Hotel!5e0!3m2!1sen!2s!4v1627539881729!5m2!1sen!2s" 
+         allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="col-md-6">
           <form [formGroup]="contactformValue">

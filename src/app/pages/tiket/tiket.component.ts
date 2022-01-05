@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { NotificationService } from 'src/app/services/notification.service';
+import { SizesService } from 'src/app/services/sizes.service';
 import { TiketApiService } from 'src/app/services/tiket-api.service';
 import { ContactModel } from '../../models/tiket.model';
 @Component({
@@ -9,10 +10,11 @@ import { ContactModel } from '../../models/tiket.model';
   styleUrls: ['./tiket.component.scss']
 })
 export class TiketComponent implements OnInit {
-
+  mobile !: Boolean;
+  screenSize !: number;
   contactformValue !: FormGroup;
   TicketmodelObj : ContactModel = new ContactModel();
-  constructor(private formbuilder : FormBuilder,private _tiketApi:TiketApiService ,private _notification : NotificationService) { }
+  constructor(private _sizeService : SizesService , private formbuilder : FormBuilder,private _tiketApi:TiketApiService ,private _notification : NotificationService) { }
 
   ngOnInit(): void {
     this.contactformValue = this.formbuilder.group({
@@ -22,6 +24,15 @@ export class TiketComponent implements OnInit {
       subject : [''],
       comment :['']
     });
+
+    this._sizeService.getScreenSize();
+    this.screenSize = this._sizeService.screenWidth;
+    if(this.screenSize <= 768){
+      this.mobile = true;
+    }
+    else{
+      this.mobile = false;
+    }
   }
   PostTicket(){
     this.TicketmodelObj.firstname = this.contactformValue.value.firstname;
