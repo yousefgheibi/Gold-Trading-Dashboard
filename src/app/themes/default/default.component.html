@@ -1,9 +1,28 @@
-  <mat-drawer-container>
+  <mat-drawer-container *ngIf="desktop">
     <mat-drawer mode="side" opened>
       <app-sidenav></app-sidenav>
     </mat-drawer>
     <mat-drawer-content>
       <app-header></app-header>
+      <div class="container-fulid page">
+        <div class="page__box p-3 mt-2"></div>
+        <div class="page__content shadow p-3 position-relative">
+          <div class="page__content-data">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+
+  <mat-drawer-container *ngIf="mobile">
+    <mat-drawer [opened]="sideBarOpen" #sidenav role="navigation">
+      <app-sidenav (closeSidenav)="sidenav.close()"></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
       <div class="container-fulid page">
         <div class="page__box p-3 mt-2"></div>
         <div class="page__content shadow p-3 position-relative">

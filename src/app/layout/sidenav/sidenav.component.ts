@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-
+  @Output() closeSidenav = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onclose() {
+    this.closeSidenav.emit();
+  }
 }
