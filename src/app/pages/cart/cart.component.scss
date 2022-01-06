@@ -58,24 +58,18 @@ h6,h4,h2{
 }
 
 .card-cart{
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .item-description{
   font-size: 11px;
 }
 
-table input{
-  width: 80%;
-}
-
 li{
-  font-size: 15px;
+  font-size: 1rem;
   list-style: none;
 }
-li input{
-  width: 120px;
-}
+
 li span{
   float: left;
 }
@@ -87,20 +81,39 @@ li span{
   background-color: #ef244a;
 }
 
-.plus{
-  margin-right: -2rem;
-  margin-top: 1.3rem;
-}
-.plus button{
-  font-size: 14px;
+.item-img{
+  width: 70px;
   border-radius: 10px;
-  padding:0.2rem 0.5rem;
+}
 
+table td .btn-d{
+  padding: 5px;
+  color: #f44336;
 }
-.plus p{
-  padding: 0 8px;
-  font-size: 16px;
-}
-.plus li{
-  display: inline-block;
+@media only screen and (max-width: 480px) {
+    .item-img{
+      width: 35px;
+    }
+
+    table th{
+      font-size: 0.75rem;
+    }
+
+    table td p{
+      font-size: 0.65rem;
+    }
+
+    table td .ng-star-inserted{
+      font-size: 0.65rem;
+    }
+  
+    li{
+      font-size: 0.8rem;
+    }
+    .btn-save{
+      font-size: 0.8rem;
+    }
+    .products-btn{
+      font-size: 0.8rem;
+    }
 }
