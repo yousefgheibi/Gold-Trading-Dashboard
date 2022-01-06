@@ -22,3 +22,11 @@ iframe{
     width: 100%;
     height: 260px;
 }
+
+
+@media only screen and (max-width: 480px) {
+    p ,.btn-send{
+        font-size: 0.8rem;
+    }
+
+}

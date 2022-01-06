@@ -53,10 +53,6 @@
       color: #636262;
   }
 
-  .card-text span{
-    font-size: 14px;
-  }
-
   .card-button {
       display: flex;
       justify-content: center;
@@ -94,6 +90,28 @@ mat-progress-spinner{
 
 @media only screen and (max-width: 480px) {
   .card-sl .card-body{
-    min-height: 120px;
+    min-height: 100px;
   }
+  .btn-create{
+    font-size: 0.75rem;
+  }
+  .card-text , .card-text .ng-star-inserted{
+    font-size: 0.7rem;
+  }
+  .card-button{
+    font-size: 0.65rem;
+  }
+  .mat-icon-button{
+    width: 30px;
+    height: 30px;
+  }
+  .card-sl mat-icon{
+    font-size: 0.7rem;
+  }
+  .card-action{
+    margin-top: -18px;
+  }
+  .mat-icon-button .mat-icon {
+    line-height: 1.1rem;
+}
 }
