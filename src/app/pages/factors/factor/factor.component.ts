@@ -135,6 +135,11 @@ export class FactorComponent implements OnInit {
             font-size: 6px;
           }
           
+          .item-img{
+            width :30px;
+            border-radius: 3px;
+            
+          }
           </style>
         </head>
     <body onload="window.print();window.close()">${printContents}
