@@ -19,7 +19,6 @@ export class ProductsComponent implements OnInit {
   public productData : ProductModel[] = [];
   searchKey : string | undefined;
   selectedrow : any;
-
   constructor(private _productApi : ProductApiService,
               public dialog : MatDialog , private _cartService : CartServiceService,
               private _notificationService : NotificationService) { }
@@ -41,10 +40,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onCreateProduct() {
-    this.dialog.open(NewProductComponent);
-    const getNewProduct = setInterval(() => {
-      this.getProduct();
-    }, 2000);
+    let dialogRef = this.dialog.open(NewProductComponent);
+    dialogRef.afterClosed().subscribe(() => this.getProduct());
   }
 
   doSearch(searchKey : string) {
@@ -78,7 +75,7 @@ export class ProductsComponent implements OnInit {
 
   editProduct(row :any){
     this.selectedrow = row;
-    this.dialog.open(EditProductComponent,{
+    let dialogRef =this.dialog.open(EditProductComponent,{
       width:'800px',
       data : {
         id : this.selectedrow.id,
@@ -93,9 +90,7 @@ export class ProductsComponent implements OnInit {
         price : this.selectedrow.price
       }
     });
-    setInterval(()=>{
-      this.getProduct();
-    },1000);
+    dialogRef.afterClosed().subscribe(() => this.getProduct());
   }
 
   add2Card(row :any){
