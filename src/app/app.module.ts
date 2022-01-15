@@ -28,6 +28,8 @@ import { FactorComponent } from './pages/factors/factor/factor.component';
 import { LineChartComponent } from './shared/charts/line-chart/line-chart.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { BarChartComponent } from './shared/charts/bar-chart/bar-chart.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,12 @@ import { BarChartComponent } from './shared/charts/bar-chart/bar-chart.component
     FormsModule,
     NgxPaginationModule,
     HighchartsChartModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
 
   ],
   providers: [NotificationService,ProductApiService],
